@@ -1,10 +1,37 @@
-# nodejs-restful-api
+# nodejs-secure restful-api with jwt web-Token
 <!-- ![RESTful API design with Node.js](https://cdn-images-1.medium.com/max/2000/1*jjYC9tuf4C3HkHCP5PcKTA.jpeg "RESTful API design with Node.js") -->
+
+### Prerequisites
+
+Node
+npm
+Express
+jsonwebtoken
+mongoose
 
 How to create a RESTful CRUD API using Nodejs?
 
-This tutorial will demo how to set up a bare bones 
+And how to secure our API with JWT Web-Token?
+
 API using mongodb as the database.
+
+With this code, we can check our user and password and pass back a token in a JSON response. 
+We are using mongodb to register the user and jsonwebtoken to create the token.
+
+
+### Clone
+
+- Clone this repo to your local machine using [https://github.com/Abdurraheem/REST-API-JWTWEB-TOKEN.git]
+
+### Setup
+
+> now install npm and packages
+
+```shell
+$ npm install
+$ bower install (if require)
+```
+## Running the tests
 
 It consist of a User model and controller. The model
 defines the data, and the controller will contain all 
@@ -17,5 +44,16 @@ for bootstrapping the application itself.
 The server file is used to spin up the server and tells the
 app to listen on a specific port.
 
-Full tutorial can be found at:
+Let’s test this out. Why not?
+Open up your REST API testing tool of choice, I use Postman or Insomnia, but any will do.
 
+Go back to your terminal and run node server.js. If it is running, stop it, save all changes to you files, and run node server.js again.
+
+Open up Postman and hit the register endpoint (http://localhost:3000/api/auth/register). Make sure to pick the POST method and x-www-form-url-encoded. Now, add some values. My user’s name is Mohammad and his password is 'password', Hit send!
+
+
+See the response? The token is a long jumbled string. To try out the  http://localhost:3000/api/auth/user endpoint, first copy the token. Change the URL to /user instead of /register, and the method to GET. Now you can add the token to the request header.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
