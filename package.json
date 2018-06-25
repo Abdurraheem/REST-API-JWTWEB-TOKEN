@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-creating-restful-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdurraheem/REST-API-JWTWEB-TOKEN.git"
+  },
+  "author": "Mohammad Raheem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdurraheem/REST-API-JWTWEB-TOKEN/issues"
+  },
+  "homepage": "https://github.com/Abdurraheem/REST-API-JWTWEB-TOKEN#readme"
+}
