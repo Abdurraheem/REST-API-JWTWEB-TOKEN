@@ -53,7 +53,7 @@ Open up Postman and hit the register endpoint (http://localhost:3000/api/auth/re
 
 See the response? The token is a long jumbled string. To try out the  http://localhost:3000/api/auth/user endpoint, first copy the token. Change the URL to /user instead of /register, and the method to GET. Now you can add the token to the request header.
 
-To login use your credential email and password ,First of all we check if the user exists with mail. Then using Bcrypt’s .compareSync() method we compare the password sent with the request to the password in the database. If they match we .sign() a token. That’s pretty much it. Let’s try it out at http:localhost:3000/api/auth/login.
+To login use your credential email and password ,First of all we check if the user exists with mail. Then using Bcrypt’s .compareSync() method we compare the password sent with the request to the password in the database. If they match we .sign() a token. That’s pretty much it. Let’s try it out at http://localhost:3000/api/auth/login.
 
 Logout: http://localhost:3000/api/auth/logout
 
