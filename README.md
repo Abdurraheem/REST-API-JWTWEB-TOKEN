@@ -48,14 +48,23 @@ Open up your REST API testing tool of choice, I use Postman or Insomnia, but any
 
 Go back to your terminal and run node server.js. If it is running, stop it, save all changes to you files, and run node server.js again.
 
-Open up Postman and hit the register endpoint (http://localhost:3000/api/auth/register). Make sure to pick the POST method and x-www-form-url-encoded. Now, add some values. My user’s name is Mohammad and his password is 'password', Hit send!
+Open up your REST API testing tool of choice, I use Postman or Insomnia, but any will do.
 
+Go back to your terminal and run node server.js. If it is running, stop it, save all changes to you files, and run node server.js again.
 
-See the response? The token is a long jumbled string. To try out the  http://localhost:3000/api/auth/user endpoint, first copy the token. Change the URL to /user instead of /register, and the method to GET. Now you can add the token to the request header.
+Open up Postman and hit the register endpoint (http://localhost:3000/api/users/registration). Make sure to pick the POST method and x-www-form-url-encoded.
+Now, add some values. My user’s name is 'Mohammad' , email is 'mohdabdur786@gmail.com' and his password is 'Wow@123' 
 
-To login use your credential email and password ,First of all we check if the user exists with mail. Then using Bcrypt’s .compareSync() method we compare the password sent with the request to the password in the database. If they match we .sign() a token. That’s pretty much it. Let’s try it out at http://localhost:3000/api/auth/login.
+See the response? The token is a long jumbled string. 
+To try out the http://localhost:3000/api/users endpoint, first copy the token. Change the URL to http://localhost:3000/api/users , and the method to GET.
+Now you can add the token to the request header.
 
-Logout: http://localhost:3000/api/auth/logout
+You will get list of users...
+
+Try to update users the http://localhost:3000/api/users endpoint, and the method to PUT with x-www-form-url-encoded.
+Now, add some values.Update name is 'Abdur' , email is 'mohdabdur786@gmail.com' and his password is 'Wow@123' 
+
+Delete some users hit http://localhost:3000/api/users/(_id) endpoint with the method DELETE.
 
 ##Disclaimer: The logout endpoint is not needed. The act of logging out can solely be done through the client side. A token is usually kept in a cookie or the browser’s localstorage. Logging out is as simple as destroying the token on the client. This /logout endpoint is created to logically depict what happens when you log out. The token gets set to null.
 
