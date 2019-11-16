@@ -20,7 +20,6 @@ exports.getUsers = async function (req, res, next) {
 }
 
 exports.createUser = async function (req, res, next) {
-
     // Req.Body contains the form submit values.
     var User = {
         name: req.body.name,

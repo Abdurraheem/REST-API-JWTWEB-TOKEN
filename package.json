@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "NODE_ENV=Development nodemon  ./bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -11,11 +11,12 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "http-errors": "~1.6.2",
+    "http-errors": "^1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.3",
     "mongoose-paginate": "^5.0.3",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "nodemon": "^1.19.4"
   }
 }

@@ -1,6 +1,5 @@
 // Gettign the Newly created Mongoose Model we just created 
 var User = require('../models/User.model');
-var config = require('../config');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
@@ -28,7 +27,6 @@ exports.getUsers = async function (query, page, limit) {
 }
 
 exports.createUser = async function (user) {
-
     // Creating a new Mongoose Object by using the new keyword
     var hashedPassword = bcrypt.hashSync(user.password, 8);
     var newUser = new User({
@@ -41,7 +39,9 @@ exports.createUser = async function (user) {
     try {
         // Saving the User 
         var savedUser = await newUser.save();
-        var token = jwt.sign({id: savedUser._id}, config.SECRET, {
+        var token = jwt.sign({
+            id: savedUser._id
+        }, process.env.SECRET, {
             expiresIn: 86400 // expires in 24 hours
         });
         return token;
@@ -79,7 +79,9 @@ exports.deleteUser = async function (id) {
 
     // Delete the User
     try {
-        var deleted = await User.remove({_id: id})
+        var deleted = await User.remove({
+            _id: id
+        })
         if (deleted.n === 0 && deleted.ok === 1) {
             throw Error("User Could not be deleted")
         }
@@ -95,11 +97,15 @@ exports.loginUser = async function (user) {
     // Creating a new Mongoose Object by using the new keyword
     try {
         // Find the User 
-        var _details = await User.findOne({ email: user.email });
+        var _details = await User.findOne({
+            email: user.email
+        });
         var passwordIsValid = bcrypt.compareSync(user.password, _details.password);
         if (!passwordIsValid) throw Error("Invalid username/password")
-        
-        var token = jwt.sign({id: _details._id}, config.SECRET, {
+
+        var token = jwt.sign({
+            id: _details._id
+        }, process.env.SECRET, {
             expiresIn: 86400 // expires in 24 hours
         });
         return token;
