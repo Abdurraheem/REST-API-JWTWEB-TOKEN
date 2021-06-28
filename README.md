@@ -29,6 +29,7 @@ We are using mongodb to register the user and jsonwebtoken to create the token.
 ```shell
 $ npm install
 $ bower install (if require)
+$ npm start
 ```
 ## Running the tests
 
